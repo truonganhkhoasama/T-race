@@ -1,40 +1,32 @@
 from turtle import *
 from random import *
 from tkinter import *
+from PIL import Image
 import turtle
 import time
 import random
 import array as arr 
-COLORS = ['red', 'green', 'blue', 'orange', 'yellow', 'black', 'purple', 'pink', 'brown', 'cyan']
-WIDTH, HEIGHT = 700, 600
 
-def Racing():
-	from operator import ifloordiv
-from turtle import *
-from random import *
-from tkinter import *
-import turtle
-import time
-import random
-import array as arr 
-WIDTH, HEIGHT = 700, 600
-COLORS = ['red', 'green', 'blue', 'orange', 'yellow', 'black', 'purple', 'pink', 'brown', 'cyan']
 
-def Racing(set):
+
+def Racing(set, bg, dt):
+	WIDTH, HEIGHT = dt, 600
+
 	def countdown(t): 
 		turtlex=turtle.Turtle()
 		turtlex.hideturtle()
 		turtlex.up() 
-		turtlex.color('black')
-		turtlex.setposition(-60,200)
+		turtlex.color('white')
+		turtlex.setposition(-400,250)
 		t=5
 		while t>0 : 
-			turtlex.write(t)
-			turtlex.write(".......")
+			turtlex.write(t, font = ("Arial", 40, "normal"))
 			turtlex.forward(20)
+			turtlex.write(".......", font = ("Arial", 40, "normal"))
+			turtlex.forward(100)
 			time.sleep(1)
 			t-=1
-		turtlex.write("START")
+		turtlex.write("START!!!", font = ("Arial", 40, "bold"))
 
 	def accelerate(turtle):
 		turtle.forward(randint(25,30))
@@ -99,8 +91,8 @@ def Racing(set):
 	
 
 	def race(set): #hàm chạy+ tính tg,tìm người thắng+xếp hạng
-		T = create_turtles(set)
 		create_finish_line()
+		T = create_turtles(set)
 		line = WIDTH // 2 - 50
 		x = 0
 		countdown(t)
@@ -257,32 +249,32 @@ def Racing(set):
 
 	def create_turtles(set): #hàm tạo rùa
 		turtles = []
-		spacingx = WIDTH // 8
+		spacingx = 700 // 8
+		newsize = (100, 100)
 		for i in range(5):
 			racer = turtle.Turtle()
 			if set==1:
-				shape=str('N5_GAME/gif1/t' + str(i+1) + '.gif')
+				shape = str('crt/i/gif1/t' + str(i+1) + '.gif')
 				addshape(shape)
 				racer.shape(shape)
 			if set == 2:
-				shape=str('N5_GAME/gif2/t' + str(i+1) + '.gif')
+				shape = str('crt/i/gif2/t' + str(i+1) + '.gif')
 				addshape(shape)
 				racer.shape(shape)
 			if set == 3:
-				shape=str('N5_GAME/gif3/t' + str(i+1) + '.gif')
+				shape = str('crt/i/gif3/t' + str(i+1) + '.gif')
 				addshape(shape)
 				racer.shape(shape)
 			if set == 4:
-				shape=str('N5_GAME/gif4/t' + str(i+1) + '.gif')
+				shape = str('crt/i/gif4/t' + str(i+1) + '.gif')
 				addshape(shape)
 				racer.shape(shape)
 			if set == 5:
-				shape=str('N5_GAME/gif5/t' + str(i+1) + '.gif')
+				shape = str('crt/i/gif5/t' + str(i+1) + '.gif')
 				addshape(shape)
 				racer.shape(shape)
 			racer.penup()
-			racer.setpos(-WIDTH // 2 + 20, HEIGHT // 4 - spacingx * i )
-			racer.pendown()
+			racer.setpos(-700 // 2-100, HEIGHT // 4 - spacingx * i )
 			turtles.append(racer)
 		return turtles
 
@@ -305,13 +297,20 @@ def Racing(set):
 			goto(WIDTH // 2 - 20, (HEIGHT // 4 + 20 - (i * gap_size * 2)))
 			stamp()
 
-	def init_turtle():
+	def init_turtle(bg):
 		screen = turtle.Screen()
-		screen.setup(WIDTH, HEIGHT)
-		screen.title('Turtle Racing!')
+		if bg == 1:
+			screen.bgpic('bg/background1.gif')
+		if bg == 2:
+			screen.bgpic('bg/background2.gif')
+		if bg == 3:
+			screen.bgpic('bg/background3.gif')
+		screen.screensize(1280,800)
+		screen.setup(1500, 850)
+		screen.title('B O N - R A C E')
 
 	t=5
 	racers = 5
-	init_turtle()
+	init_turtle(bg)
 	race(set)
 	time.sleep(5)

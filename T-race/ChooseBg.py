@@ -2,50 +2,49 @@ from tkinter.ttk import Frame, Button
 from tkinter import *
 import sys
 
-root = Tk()
-root.title('T - R A C E')
-root.geometry('+50+10')
+def TakeBackground(a):
+    root = Tk()
+    root.title('B O N - R A C E')
+    root.geometry('+50+10')
 
-bg = PhotoImage(file = 'Inputdesing/7.gif')  #set background
-ground = Label(root, image = bg)
-ground.pack()
+    #set background
+    bg = PhotoImage(file = 'bg/choosebackground.gif') 
+    ground = Label(root, image = bg)
+    ground.pack()
 
-b = [0]
-h = [0]
+    b = [0]
+    h = [0]
 
-def Exit():
-    if h[0] != 0 and b[0] != 0:
-        root.destroy()
+    def b1():
+        b[0] = 1
 
-def b1():
-    b[0] = 1
+    def b2():
+        b[0] = 2
 
-def b2():
-    b[0] = 2
+    def b3():
+        b[0] = 3
 
-def b3():
-    b[0] = 3
+    def next():
+        h[0] = 1
+        exit()
 
+    def exit():
+        if b[0] != 0 and h[0] != 0:
+            root.destroy()
 
+    bg1 = PhotoImage(file = 'btn/bg1.gif')                                          #########################################
+    background1 = Button(root, image = bg1, command = b1).place(x=160, y=280)       ##### set     background     button #####
+                                                                                    #########################################
+    bg2 = PhotoImage(file = 'btn/bg2.gif')                                          ##### set     background     button #####
+    background2 = Button(root, image = bg2, command = b2).place(x=600, y=280)       #########################################
+                                                                                    ##### set     background     button #####
+    bg3 = PhotoImage(file = 'btn/bg3.gif')                                          #########################################
+    background3 = Button(root, image = bg3, command = b3).place(x=1040, y=280)      ##### set     background     button #####
+                                                                                    #########################################
 
-def next():
-    h[0] = 1
-    Exit()
+    #set next button
+    n = PhotoImage(file ='btn/next.gif')
+    next = Button(root, image = n, command = next).place(x=1135, y=675)
 
-s1 = PhotoImage(file = 'Inputdesing/bg1.gif')
-set1 = Button(root, image = s1, command = b1).place(x=160, y=285)
-
-s2 = PhotoImage(file = 'Inputdesing/bg2.gif')
-set2 = Button(root, image = s2, command = b2).place(x=595, y=285)
-
-s3 = PhotoImage(file = 'Inputdesing/bg3.gif')
-set3 = Button(root, image = s3, command = b3).place(x=1040, y=285)
-
-
-n = PhotoImage(file ='Inputdesing/next.gif')
-next = Button(root, image = n, command = next).place(x=1135, y=675)
-
-root.mainloop()
-
-def TakeBackground():
+    root.mainloop()
     return b[0]

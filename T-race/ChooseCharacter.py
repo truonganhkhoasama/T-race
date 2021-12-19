@@ -7,117 +7,81 @@ def TakeCharacter(set):
     root.title('T - R A C E')
     root.geometry('+50+10')
 
-    bg = PhotoImage(file = 'Inputdesing/5.gif')  #set background
+    #set background
+    bg = PhotoImage(file = 'bg/choosecharacter.gif')
     ground = Label(root, image = bg)
     ground.pack()
 
     c = [0]
     h = [0]
-
-    def Exit():
-        if h[0] != 0 and c[0] != 0:
-            root.destroy()
     
-    def cc1():
+    def c1():
         c[0] = 1
     
-    def cc2():
+    def c2():
         c[0] = 2
 
-    def cc3():
+    def c3():
         c[0] = 3
 
-    def cc4():
+    def c4():
         c[0] = 4
 
-    def cc5():
+    def c5():
         c[0] = 5
 
     def next():
         h[0] = 1
-        Exit()
+        exit()
+        
+    def exit():
+        if c[0] != 0 and h[0] != 0:
+            root.destroy()
 
-    if set == 1:
-        set1 = PhotoImage(file='N5_GAME/gif1/t1.gif')
-        set2 = PhotoImage(file='N5_GAME/gif1/t2.gif')
-        set3 = PhotoImage(file='N5_GAME/gif1/t3.gif')
-        set4 = PhotoImage(file='N5_GAME/gif1/t4.gif')
-        set5 = PhotoImage(file='N5_GAME/gif1/t5.gif')
-        c1 = Button(root, image=set1, command=cc1)
-        c1.place(x=200,y=350)
-        c2 = Button(root, image=set2, command=cc2)
-        c2.place(x=450, y=350)
-        c3 = Button(root, image=set3, command=cc3)
-        c3.place(x=700, y=350)
-        c4 = Button(root, image=set4, command=cc4)
-        c4.place(x=950, y=350)
-        c5 = Button(root, image=set5, command=cc5)
-        c5.place(x=1200, y=350)
-    if set == 2:
-        set1 = PhotoImage(file='N5_GAME/gif2/t1.gif')
-        set2 = PhotoImage(file='N5_GAME/gif2/t2.gif')
-        set3 = PhotoImage(file='N5_GAME/gif2/t3.gif')
-        set4 = PhotoImage(file='N5_GAME/gif2/t4.gif')
-        set5 = PhotoImage(file='N5_GAME/gif2/t5.gif')
-        c1 = Button(root, image=set1, command=cc1)
-        c1.place(x=200,y=350)
-        c2 = Button(root, image=set2, command=cc2)
-        c2.place(x=450, y=350)
-        c3 = Button(root, image=set3, command=cc3)
-        c3.place(x=700, y=350)
-        c4 = Button(root, image=set4, command=cc4)
-        c4.place(x=950, y=350)
-        c5 = Button(root, image=set5, command=cc5)
-        c5.place(x=1200, y=350)
-    if set == 3:
-        set1 = PhotoImage(file='N5_GAME/gif3/t1.gif')
-        set2 = PhotoImage(file='N5_GAME/gif3/t2.gif')
-        set3 = PhotoImage(file='N5_GAME/gif3/t3.gif')
-        set4 = PhotoImage(file='N5_GAME/gif3/t4.gif')
-        set5 = PhotoImage(file='N5_GAME/gif3/t5.gif')
-        c1 = Button(root, image=set1, command=cc1)
-        c1.place(x=200,y=350)
-        c2 = Button(root, image=set2, command=cc2)
-        c2.place(x=450, y=350)
-        c3 = Button(root, image=set3, command=cc3)
-        c3.place(x=700, y=350)
-        c4 = Button(root, image=set4, command=cc4)
-        c4.place(x=950, y=350)
-        c5 = Button(root, image=set5, command=cc5)
-        c5.place(x=1200, y=350)
-    if set == 4:
-        set1 = PhotoImage(file='N5_GAME/gif4/t1.gif')
-        set2 = PhotoImage(file='N5_GAME/gif4/t2.gif')
-        set3 = PhotoImage(file='N5_GAME/gif4/t3.gif')
-        set4 = PhotoImage(file='N5_GAME/gif4/t4.gif')
-        set5 = PhotoImage(file='N5_GAME/gif4/t5.gif')
-        c1 = Button(root, image=set1, command=cc1)
-        c1.place(x=200,y=350)
-        c2 = Button(root, image=set2, command=cc2)
-        c2.place(x=450, y=350)
-        c3 = Button(root, image=set3, command=cc3)
-        c3.place(x=700, y=350)
-        c4 = Button(root, image=set4, command=cc4)
-        c4.place(x=950, y=350)
-        c5 = Button(root, image=set5, command=cc5)
-        c5.place(x=1200, y=350)
-    if set == 5:
-        set1 = PhotoImage(file='N5_GAME/gif5/t1.gif')
-        set2 = PhotoImage(file='N5_GAME/gif5/t2.gif')
-        set3 = PhotoImage(file='N5_GAME/gif5/t3.gif')
-        set4 = PhotoImage(file='N5_GAME/gif5/t4.gif')
-        set5 = PhotoImage(file='N5_GAME/gif5/t5.gif')
-        c1 = Button(root, image=set1, command=cc1)
-        c1.place(x=200,y=350)
-        c2 = Button(root, image=set2, command=cc2)
-        c2.place(x=450, y=350)
-        c3 = Button(root, image=set3, command=cc3)
-        c3.place(x=700, y=350)
-        c4 = Button(root, image=set4, command=cc4)
-        c4.place(x=950, y=350)
-        c5 = Button(root, image=set5, command=cc5)
-        c5.place(x=1200, y=350)
-    n = PhotoImage(file ='Inputdesing/next.gif')
+    if set == 1:                                                  ##### set     character     image #####
+        crt1 = PhotoImage(file = 'crt/a/gif1/t1.gif')             #### set     character     image ######
+        crt2 = PhotoImage(file = 'crt/a/gif1/t2.gif')             ### set     character     image #######
+        crt3 = PhotoImage(file = 'crt/a/gif1/t3.gif')             ## set     character     image ########
+        crt4 = PhotoImage(file = 'crt/a/gif1/t4.gif')             # set     character     image #########
+        crt5 = PhotoImage(file = 'crt/a/gif1/t5.gif')             ## set     character     image ########
+    if set == 2:                                                  ### set     character     image #######
+        crt1 = PhotoImage(file = 'crt/a/gif2/t1.gif')             #### set     character     image ######
+        crt2 = PhotoImage(file = 'crt/a/gif2/t2.gif')             ##### set     character     image #####
+        crt3 = PhotoImage(file = 'crt/a/gif2/t3.gif')             ###### set     character     image ####
+        crt4 = PhotoImage(file = 'crt/a/gif2/t4.gif')             ####### set     character     image ###
+        crt5 = PhotoImage(file = 'crt/a/gif2/t5.gif')             ######## set     character     image ##
+    if set == 3:                                                  ######### set     character     image #
+        crt1 = PhotoImage(file = 'crt/a/gif3/t1.gif')             ######## set     character     image ##
+        crt2 = PhotoImage(file = 'crt/a/gif3/t2.gif')             ####### set     character     image ###
+        crt3 = PhotoImage(file = 'crt/a/gif3/t3.gif')             ###### set     character     image ####
+        crt4 = PhotoImage(file = 'crt/a/gif3/t4.gif')             ##### set     character     image #####
+        crt5 = PhotoImage(file = 'crt/a/gif3/t5.gif')             #### set     character     image ######
+    if set == 4:                                                  ### set     character     image #######
+        crt1 = PhotoImage(file = 'crt/a/gif4/t1.gif')             ## set     character     image ########
+        crt2 = PhotoImage(file = 'crt/a/gif4/t2.gif')             # set     character     image #########
+        crt3 = PhotoImage(file = 'crt/a/gif4/t3.gif')             ## set     character     image ########
+        crt4 = PhotoImage(file = 'crt/a/gif4/t4.gif')             ### set     character     image #######
+        crt5 = PhotoImage(file = 'crt/a/gif4/t5.gif')             #### set     character     image ######
+    if set == 5:                                                 ##### set     character     image #####
+        crt1 = PhotoImage(file = 'crt/a/gif5/t1.gif')             ###### set     character     image ####
+        crt2 = PhotoImage(file = 'crt/a/gif5/t2.gif')             ####### set     character     image ###
+        crt3 = PhotoImage(file = 'crt/a/gif5/t3.gif')             ######## set     character     image ##
+        crt4 = PhotoImage(file = 'crt/a/gif5/t4.gif')             ######### set     character     image #
+        crt5 = PhotoImage(file = 'crt/a/gif5/t5.gif')             ######## set     character     image ##
+
+    character1 = Button(root, image = crt1, command = c1)      # set     character     button ---------#
+    character1.place(x = 200, y = 350)                         #- set     character     button --------#
+    character2 = Button(root, image = crt2, command = c2)      #-- set     character     button -------#
+    character2.place(x = 450, y = 350)                         #--- set     character     button ------#
+    character3 = Button(root, image = crt3, command = c3)      #---- set     character     button -----#
+    character3.place(x = 700, y=350)                           #----- set     character     button ----#
+    character4 = Button(root, image = crt4, command = c4)      #------ set     character     button ---#
+    character4.place(x = 950, y = 350)                         #------- set     character     button --#
+    character5 = Button(root, image = crt5, command = c5)      #-------- set     character     button -#
+    character5.place(x = 1200, y = 350)                        #--------- set     character     button #
+
+    #set next button
+    n = PhotoImage(file ='btn/next.gif')
     next = Button(root, image = n, command = next).place(x=1135, y=675)
 
     root.mainloop()

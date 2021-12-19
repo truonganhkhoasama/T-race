@@ -1,9 +1,9 @@
 from turtle import *
 from tkinter import *
-import Start, ChooseGame, ChooseBit ,ChooseBg,ChooseSet, ChooseCharacter, Racingturtle
+import Start, ChooseGame, ChooseBit ,ChooseBg, ChooseDistance, ChooseSet, ChooseCharacter, Racingturtle
 from time import sleep
 import sys
-COLORS = ['red', 'green', 'blue', 'orange', 'yellow', 'black', 'purple', 'pink', 'brown', 'cyan']
+
 #Định nghĩa hàm chạy game
 def define():
     start = Start.start()
@@ -15,14 +15,15 @@ if define() == 1:
     if choosegame == 1:
         bit = ChooseBit.TakeBit()  
 
-        bg = ChooseBg.TakeBackground()
-
         set = ChooseSet.TakeSet()
 
         if set != 0:
             cha = ChooseCharacter.TakeCharacter(set)
             if cha != 0:
-                Racingturtle.Racing(set)
+                dt = ChooseDistance.TakeDistance(cha)
+                bg = ChooseBg.TakeBackground(cha)
+                if dt != 0:
+                    Racingturtle.Racing(set, bg, dt)
 
     else:
         exit()

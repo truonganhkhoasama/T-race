@@ -30,6 +30,9 @@
     <Compile Include="ChooseCharacter.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ChooseDistance.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ChooseGame.py">
       <SubType>Code</SubType>
     </Compile>
