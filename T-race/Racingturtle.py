@@ -233,6 +233,41 @@ def Racing(set, bg, dt):
 			else:
 				T[4].setx(WIDTH // 2 - 20)
 			x = min(x1,x2,x3,x4,x0)
+			timemin=(time1,time2,time3,time4,time5)
+		if(timemin==time1):
+			T[0].left(720)
+			T[0].forward(200)
+			T[1].left(90)
+			T[2].left(90)
+			T[3].left(90)
+			T[4].left(90)
+		if(timemin==time2):
+			T[1].left(720)
+			T[1].forward(200)
+			T[0].left(90)
+			T[2].left(90)
+			T[3].left(90)
+			T[4].left(90)
+		if(timemin==time3):
+			T[2].left(720)
+			T[2].forward(200)
+			T[1].left(90)
+			T[0].left(90)
+			T[3].left(90)
+			T[4].left(90)
+		if(timemin==time4):
+			T[3].left(720)
+			T[3].forward(200)
+			T[1].left(90)
+			T[2].left(90)
+			T[0].left(90)
+			T[4].left(90)
+		if(timemin==time5):
+			T[4].left(720)
+			T[4].forward(200)
+			T[1].left(90)
+			T[2].left(90)
+			T[3].left(90)
 
 		a=[('The red turtle',time1),('The green turtle',time2),('The blue turtle',time3),('The yellow turtle',time4),('The purple turtle',time5)]
 		def take_second(elem): 
